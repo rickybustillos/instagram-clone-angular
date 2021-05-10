@@ -1,1 +1,3 @@
-<div class="bg-auth-banner"></div>
+<div class="bg-auth-banner">
+  <img *ngFor="let imagem of imagens" [src]="imagem.url" [@banner]="imagem.estado">
+</div>

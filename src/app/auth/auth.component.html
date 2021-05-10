@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row justify-content-center align-items-center">
-    <div class="d-none d-xl-block col-4">
+    <div class="d-none d-xl-block col-4" [@animacao-banner]="estadoBanner">
       <app-banner></app-banner>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4 px-5">
-      <!-- <app-login></app-login> -->
-      <app-cadastro></app-cadastro>
+    <div *ngIf="cadastro" class="col-12 col-md-8 col-lg-6 col-xl-4 px-5" [@animacao-card]="estadoCard">
+      <app-cadastro (exibirPainel)="exibirPainel($event)"></app-cadastro>
+    </div>
+    <div *ngIf="!cadastro" class="col-12 col-md-8 col-lg-6 col-xl-4 px-5" [@animacao-card]="estadoCard">
+      <app-login (exibirPainel)="exibirPainel($event)"></app-login>
     </div>
   </div>
 </div>

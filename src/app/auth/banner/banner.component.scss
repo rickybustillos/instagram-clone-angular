@@ -1,5 +1,10 @@
+img {
+    position: absolute
+}
 .bg-auth-banner {
     background-image: url("/assets/banner-auth/fundo.png");
     height: 602px;
     width: 379px;
+    padding-top: 91px;
+    padding-left: 116px;
 }
