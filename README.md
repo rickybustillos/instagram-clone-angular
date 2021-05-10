@@ -2,6 +2,11 @@
 
 Esse projeto foi gerado a partir do [Angular CLI](https://github.com/angular/angular-cli) na versão 11.2.6.
 
+## Recursos necessários
+Para executar a aplicação é necessário ter instalado os seguintes recursos no computador:
+- NodeJS
+- npm
+
 ## Servidor de desenvolvimento
 
 Execute o comando `ng serve` para instanciar o servidor. Navegue em `http://localhost:4200/`. O aplicativo vai recarregar automaticamente se você alterar qualquer um dos arquivos fonte.
