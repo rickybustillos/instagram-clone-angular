@@ -1,19 +1,43 @@
-<nav class="navbar navbar-default bg-white py-0 my-0 mb-5 border-bottom">
-  <div class="container py-2">
-    <div class="col-md-4 col-4 ms-0 mr-auto">
-      <a class="text-start img-logo" href="/home">
-        <img alt="Instagram" src="assets/logo-2.png" class="img-fluid">
-      </a>
-    </div>
-    <div class="col-md-4 col-2 ml-auto me-0 text-end">
-      <a class="text-end mx-auto" href="#" data-bs-toggle="modal" data-bs-target="#modalIncluir">
-        <img alt="Incluir" src="assets/camera.png" class="btn-incluir h-50 img-fluid" id="btn_incluir">						
-      </a>
-      <a href="#" (click)="logOut()" class="mx-3 text-decoration-none text-danger">Sair</a>
+<nav class="navbar navbar-default bg-white my-0 mb-5 border-bottom">
+  <div class="container">
+    <div class="row w-100 py-0 align-items-center">
+      <div class="col-2 d-none d-sm-block"></div>
+
+      <!-- Logo -->
+      <div class="col-auto me-auto">
+        <a class="text-start img-logo" href="/home">
+          <img alt="Instagram" src="assets/logo-2.png" class="img-fluid">
+        </a>
+      </div>
+
+      <!-- Campo pesquisar -->
+      <div class="col-2 d-none d-sm-block">
+        <input type="text" class="form-control form-control-sm text-center" placeholder="Pesquisar">
+      </div>
+
+      <!-- Outras opções -->
+      <div class="col-6 col-sm-3 text-end ms-auto ms-sm-0">
+        <a class="text-end mx-auto" href="#" data-bs-toggle="modal" data-bs-target="#modalIncluir">
+          <img alt="Incluir" src="assets/camera.png" class="btn-incluir h-50 img-fluid" id="btn_incluir">
+        </a>
+        <a href="#" (click)="logOut()" class="mx-3 text-decoration-none">Sair</a>
+      </div>
+
+      <div class="col-2 d-none d-sm-block"></div>
+
     </div>
   </div>
 </nav>
 
 <div class="container">
-  <app-publicacoes></app-publicacoes>
+  <div class="row">
+    <div class="col-sm-2 d-none d-sm-block"></div>
+    <div class="col-12 col-sm-6">
+      <app-publicacoes #publicacoes></app-publicacoes>
+    </div>
+    <div class="col-12 col-sm-2"></div>
+    <div class="col-sm-2 d-none d-sm-block"></div>
+
+  </div>
+  <app-incluir-publicacao (updateTimeline)="updateTimeline()"></app-incluir-publicacao>
 </div>

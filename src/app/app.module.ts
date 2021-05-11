@@ -14,6 +14,9 @@ import { CadastroComponent } from './auth/cadastro/cadastro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
+import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
+import { Bd } from './bd.service';
+import { Progresso } from './progresso.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
     LoginComponent,
     CadastroComponent,
     HomeComponent,
-    PublicacoesComponent
+    PublicacoesComponent,
+    IncluirPublicacaoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [ Auth, AuthGuard ],
+  providers: [ Auth, AuthGuard, Bd, Progresso ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
