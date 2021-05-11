@@ -56,11 +56,11 @@ export class AuthComponent implements OnInit {
   }
 
   public inicioDaAnimacao(): void {
-    console.log('inicio da animação');
+    // console.log('inicio da animação');
   }
 
   public fimDaAnimacao(): void {
-    console.log('fim da animação');
+    // console.log('fim da animação');
   }
 
 }
