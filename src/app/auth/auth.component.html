@@ -7,7 +7,7 @@
     <div *ngIf="cadastro" class="col-12 col-md-8 col-lg-6 col-xl-4 px-5" [@animacao-card]="estadoCard">
       <app-cadastro (exibirPainel)="exibirPainel($event)"></app-cadastro>
     </div>
-    <div *ngIf="!cadastro" class="col-12 col-md-8 col-lg-6 col-xl-4 px-5" [@animacao-card]="estadoCard">
+    <div *ngIf="!cadastro" class="col-12 col-md-8 col-lg-6 col-xl-4 px-5" [@animacao-card]="estadoCard"  (@animacao-card.start)="inicioDaAnimacao()" (@animacao-card.done)="fimDaAnimacao()">
       <app-login (exibirPainel)="exibirPainel($event)"></app-login>
     </div>
   </div>
