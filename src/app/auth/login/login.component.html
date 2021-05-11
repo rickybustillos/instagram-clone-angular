@@ -2,12 +2,12 @@
   <div class="card-body">
     <div class="card-title"></div>
 
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="autenticate()">
       <div class="mt-2">
-        <input type="email" class="form-control" placeholder="E-mail">
+        <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
       </div>
       <div class="mt-2">
-        <input type="password" class="form-control" placeholder="Senha">
+        <input type="password" class="form-control" placeholder="Senha" formControlName="senha">
       </div>
       <div class="d-grid mt-2">
         <button type="submit" class="btn btn-primary">Entrar</button>
