@@ -10,7 +10,7 @@
         <input type="password" class="form-control" placeholder="Senha" formControlName="senha">
       </div>
       <div class="d-grid mt-2">
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="submitDisabled">Entrar</button>
       </div>
     </form>
 

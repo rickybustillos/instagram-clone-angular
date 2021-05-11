@@ -20,7 +20,7 @@ export class Auth {
 
         // Registrando dados complementares na base 64
         firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`)
-          .set({ usuario })
+          .set(usuario)
 
       })
       .catch((error: Error) => {
