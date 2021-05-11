@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 @Injectable()
 export class Auth {
 
+  public error: any;
   public token_id: string;
 
   constructor(private router: Router) { }
@@ -27,8 +28,8 @@ export class Auth {
       })
   }
 
-  public autenticate(email: string, senha: string): void {
-    firebase.auth().signInWithEmailAndPassword(email, senha)
+  public autenticate(email: string, senha: string): Promise<any> {
+    return firebase.auth().signInWithEmailAndPassword(email, senha)
       .then((response: any) => {
 
         firebase.auth().currentUser.getIdToken()
@@ -40,14 +41,18 @@ export class Auth {
 
       })
       .catch((error: Error) => {
-        console.log(error);
+        this.error = error;
       })
   }
 
   public autenticated(): boolean {
-    if(this.token_id === undefined && localStorage.getItem('idToken') != null) {
+    if (this.token_id === undefined && localStorage.getItem('idToken') != null) {
       this.token_id = localStorage.getItem('idToken');
     }
+    if (this.token_id === undefined) {
+      this.router.navigateByUrl('/');
+    }
+
     return this.token_id !== undefined;
   }
 
