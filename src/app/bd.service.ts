@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase'
+import * as firebase from 'firebase';
 import { Publicacao } from './home/publicacoes/publicacao.model';
 import { Progresso } from './progresso.service';
 
